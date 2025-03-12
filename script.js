@@ -1,26 +1,35 @@
 // Dream vacation components
 const shortVacations = [
-    "Reykjavik Iceland",
-    "Venice Italy",
-    "Kyoto Japan",
-    "New Orleans USA",
-    "Marrakech Morocco",
-    "Santorini Greece",
-    "Miami USA",
-    "Dubai UAE",
-    "Queenstown New Zealand",
-    "San Francisco USA",
-    "Cusco Peru",
-    "Cape Town South Africa",
-    "Nashville USA",
-    "Bangkok Thailand",
-    "Paris France",
-    "Honolulu USA",
-    "Rio de Janeiro Brazil",
-    "Stockholm Sweden",
-    "Las Vegas USA",
+    "Reykjavik, Iceland",
+    "Venice, Italy",
+    "Kyoto, Japan",
+    "New Orleans, LA",
+    "Marrakech, Morocco",
+    "Santorini, Greece",
+    "Miami, FL",
+    "Dubai, UAE",
+    "Queenstown, New Zealand",
+    "San Francisco, CA",
+    "Cusco, Peru",
+    "Cape Town, South Africa",
+    "Nashville, TN",
+    "Bangkok, Thailand",
+    "Paris, France",
+    "Honolulu, HI",
+    "Rio de Janeiro, Brazil",
+    "Stockholm, Sweden",
+    "Las Vegas, NV",
     "Singapore",
-    "Vancouver Canada"
+    "Vancouver, Canada",
+    "Austin, TX",
+    "Amsterdam, Netherlands",
+    "Barcelona, Spain",
+    "Charleston, SC",
+    "Tokyo, Japan",
+    "Sedona, AZ",
+    "Edinburgh, Scotland",
+    "Bali, Indonesia",
+    "Portland, OR"
 ];
 
 const activities = [
@@ -245,6 +254,20 @@ function generateConfessions() {
     document.getElementById('confessions-result').innerHTML = confessions.join('<br><br>');
 }
 
-// Initialize with random suggestions
+// KFM components
+const names = ["Prash", "Gil", "Zeta", "Josh", "Nikki", "Cindy"];
+
+function generateKFM() {
+    // Shuffle the array and take first 3 names
+    const shuffled = [...names].sort(() => Math.random() - 0.5).slice(0, 3);
+    
+    // Format the result
+    const result = `K: ${shuffled[0]}<br>F: ${shuffled[1]}<br>M: ${shuffled[2]}`;
+    
+    document.getElementById('kfm-result').innerHTML = result;
+}
+
+// Initialize all generators
 generateVacation();
-generateConfessions(); 
+generateConfessions();
+generateKFM(); 
